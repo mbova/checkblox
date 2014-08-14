@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   # GET /items
   # GET /items.json
   def index
-    @items = Item.all
+    @items = current_user ? current_user.items : []
   end
 
   # GET /items/1
@@ -28,6 +28,7 @@ class ItemsController < ApplicationController
 
     respond_to do |format|
       if @item.save
+        current_user.items << @item
         format.html { redirect_to @item, notice: 'Item was successfully created.' }
         format.json { render :show, status: :created, location: @item }
       else
