@@ -18,6 +18,10 @@
  * Globals
  */
 
+ /*
+ *= require rails_bootstrap_forms
+ */
+
 @import "bootstrap";
 
 /* Links */
@@ -117,9 +121,13 @@ body {
   margin-top: 14px;
 }
 
-#devise-container {
-  max-width:200px;
+#form-container {
+  max-width:400px;
   margin: 0 auto;
+}
+
+#item_name, #item_description {
+  color: #888 !important;
 }
 
 @media (min-width: 768px) {

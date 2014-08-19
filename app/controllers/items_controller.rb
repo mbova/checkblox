@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  respond_to :html, :js
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   # GET /items
@@ -55,10 +56,15 @@ class ItemsController < ApplicationController
   # DELETE /items/1
   # DELETE /items/1.json
   def destroy
-    @item.destroy
-    respond_to do |format|
-      format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
-      format.json { head :no_content }
+
+    if @item.destroy
+      flash[:notice] = "Great job! One less item on the list!"
+    else
+      flash[:notice] = "There was a problem. Please refresh and try again."
+    end
+
+    respond_with(@item) do |format|
+      format.html { redirect_to @item }
     end
   end
 

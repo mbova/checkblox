@@ -1,24 +1,19 @@
 <h1>My List</h1>
 
-<table>
+<table class='table'>
   <thead>
     <tr>
       <th>Completed</th>
-      <th>Name</th>
-      <th>Description</th>
-      <th colspan="3"></th>
+      <th>Item</th>
     </tr>
   </thead>
 
   <tbody>
     <% @items.each do |item| %>
-      <tr>
-        <td><%= item.completed %></td>
-        <td><%= item.name %></td>
-        <td><%= item.description %></td>
-        <td><%= link_to 'Show', item %></td>
+      <tr id="item-<%= item.id %>">
+        <td><%= link_to 'Mark Completed', item, method: :delete, remote: true %></td>
+        <td><%= link_to "#{item.name}", item %></td>
         <td><%= link_to 'Edit', edit_item_path(item) %></td>
-        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
