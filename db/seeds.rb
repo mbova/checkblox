@@ -20,10 +20,11 @@ users = User.all
 105.times do
 item = Item.create(
   name:         Faker::Lorem.sentence,
-  description:  Faker::Lorem.paragraph
+  description:  Faker::Lorem.paragraph,
+  user: users.sample
 )
 # set the created_at to a time within the past year
-item.update_attribute(:created_at, rand(10.minutes .. 1.year).ago)
+item.update_attribute(:created_at, rand(10.minutes .. 2.weeks).ago)
 end
 items = Item.all
 
