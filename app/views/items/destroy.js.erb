@@ -1,5 +1,6 @@
 <% if @item.destroyed? %>
 	$('#item-' +<%= @item.id %>).fadeOut(1000);
+	<% flash.now[:notice] = "Great job! One less item on the list!" %>
 <% else %>
 	$('#item-' +<%= @item.id %>).prepend("<div class='alert alert-error'><%= flash[:error] %></div>");
 <% end %>
