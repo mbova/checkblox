@@ -11,6 +11,7 @@ group :development do
   gem 'sqlite3'
 end
 
+gem 'jquery-datatables-rails', '~> 2.2.1'
 gem 'whenever', :require => false
 gem 'devise-bootstrap-views'
 gem 'sass-rails', '~> 4.0.3'
