@@ -1,6 +1,6 @@
 <h1>My List</h1>
 
-<table class="table">
+<table class="table datatable">
   <thead>
     <tr>
       <th>Completed</th>
@@ -14,12 +14,13 @@
       <tr id="item-<%= item.id %>">
         <td><%= link_to 'Mark Completed', item, method: :delete, remote: true %></td>
         <td><%= link_to "#{item.name}", item %></td>
-        <td><%= ( 7 - ((Time.zone.now - item.created_at) / 60) ).round %>
+        <td><%= ( 7 - ( (Time.zone.now - item.created_at)/(24*60*60) ).round ) %>
       </tr>
     <% end %>
+    <tr>
+      <td><%= link_to 'New Item', new_item_path %></td>
+    </tr>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Item', new_item_path %>

@@ -2,6 +2,10 @@ class ItemsController < ApplicationController
   respond_to :html, :js
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
+  def age(item)
+    item.created_at - Time.zone.now
+  end
+
   # GET /items
   # GET /items.json
   def index
