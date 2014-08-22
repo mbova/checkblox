@@ -18,13 +18,13 @@
 
           <div class="masthead clearfix">
             <div class="inner">
-
               <% if flash[:notice] %>
-                <div class="alert alert-success alert-dismissible">
-                  <%= flash.now[:notice] %>
+                <div class="alert alert-success">
+                  <button type="button" class="close" data-dismiss="alert">&times;</button>
+                  <%= flash[:notice] %>
                 </div>
               <% elsif flash[:error] %>
-                <div class="alert alert-danger alert-dismissible">
+                <div class="alert alert-danger">
                   <button type="button" class="close" data-dismiss="alert">&times;</button>
                   <%= flash[:error] %>
                 </div>
@@ -33,7 +33,7 @@
                   <button type="button" class="close" data-dismiss="alert">&times;</button>
                   <%= flash[:alert] %>
                 </div>
-            <% end %>
+              <% end %>
                 <h3 class="masthead-brand"><a href="/">Checkblox</a></h3>
                 <% if current_user %>
                   <div class="masthead-nav navbar-right user-info" id="user-info">
@@ -59,7 +59,7 @@
 
           <div class="mastfoot">
             <div class="inner">
-              <p>Cover template for <a href="http://getbootstrap.com">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+
             </div>
           </div>
 
