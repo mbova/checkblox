@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20140814204855) do
     t.integer  "user_id"
   end
 
+  add_index "items", ["user_id"], name: "index_items_on_user_id"
+
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
