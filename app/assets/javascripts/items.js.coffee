@@ -4,6 +4,6 @@
 
 jQuery ->
 	$('#datatable').dataTable({
-		"pagingType": 'simple';
-		"searching": false;
+		paging: false;
+		searching: false;
 	});

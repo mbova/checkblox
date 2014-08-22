@@ -17,12 +17,14 @@
         <td><%= ( 7 - ( (Time.zone.now - item.created_at)/(24*60*60) ).round ) %>
       </tr>
     <% end %>
+  </tbody>
+  <tfoot>
     <tr>
       <td><%= link_to 'New Item', new_item_path %></td>
       <td></td>
       <td></td>
     </tr>
-  </tbody>
+  </tfoot>
 </table>
 
 <br>
