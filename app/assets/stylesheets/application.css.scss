@@ -11,7 +11,7 @@
  * file per style scope.
  *
 
- *= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
+
  *= require_tree .
  *= require_self
  */
@@ -30,7 +30,7 @@
 a,
 a:focus,
 a:hover {
-  color: #fff;
+
 }
 
 /* Custom default button */
@@ -51,12 +51,9 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: #698578;
 }
 body {
-  color: #fff;
   text-align: center;
-  text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
@@ -65,8 +62,6 @@ body {
   width: 100%;
   height: 100%; /* For at least Firefox */
   min-height: 100%;
-  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
-          box-shadow: inset 0 0 100px rgba(0,0,0,.5);
 }
 .site-wrapper-inner {
   display: table-cell;
@@ -133,7 +128,15 @@ body {
 }
 
 th {
-  text-align: center !important;
+  text-align: center;
+}
+
+table.dataTable.no-footer {
+border-bottom: 1px solid transparent;
+}
+
+.dataTables_length {
+  width: 50%;
 }
 
 @media (min-width: 768px) {
