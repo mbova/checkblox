@@ -2,10 +2,6 @@ class ItemsController < ApplicationController
   respond_to :html, :js
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
-  def age(item)
-    item.created_at - Time.zone.now
-  end
-
   # GET /items
   # GET /items.json
   def index
@@ -46,6 +42,7 @@ class ItemsController < ApplicationController
   # PATCH/PUT /items/1
   # PATCH/PUT /items/1.json
   def update
+    
     respond_to do |format|
       if @item.update(item_params)
         format.html { redirect_to items_path, notice: 'Item was successfully updated.' }
